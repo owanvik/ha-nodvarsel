@@ -1,6 +1,7 @@
 # Nødvarsel for Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
+[![Validate](https://github.com/owanvik/ha-nodvarsel/actions/workflows/validate.yml/badge.svg)](https://github.com/owanvik/ha-nodvarsel/actions/workflows/validate.yml)
 [![License](https://img.shields.io/github/license/owanvik/ha-nodvarsel)](LICENSE)
 
 Custom integration for Home Assistant som overvåker aktive nødvarsler fra [nødvarsel.no](https://www.nodvarsel.no).
@@ -19,6 +20,10 @@ Custom integration for Home Assistant som overvåker aktive nødvarsler fra [nø
 ## Installasjon
 
 ### HACS (anbefalt)
+
+[![Åpne HACS-repoet i Home Assistant](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=owanvik&repository=ha-nodvarsel&category=integration)
+
+Eller manuelt:
 
 1. Åpne HACS i Home Assistant
 2. Klikk menyen (⋮) → **Egendefinerte repoer**
