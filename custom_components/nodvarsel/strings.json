@@ -1,0 +1,53 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Nødvarsel",
+        "description": "Overvåker aktive nødvarsler fra nødvarsel.no.\n\nData levert av DSB, Politiet og Sivilforsvaret.",
+        "data": {
+          "scan_interval": "Oppdateringsintervall (sekunder)"
+        },
+        "data_description": {
+          "scan_interval": "Hvor ofte skal feeden sjekkes (30\u2013600 sekunder, standard 90)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kunne ikke koble til nødvarsel.no",
+      "unknown": "Ukjent feil oppsto"
+    },
+    "abort": {
+      "already_configured": "Nødvarsel er allerede konfigurert"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Oppdateringsintervall (sekunder)"
+        },
+        "data_description": {
+          "scan_interval": "Hvor ofte skal feeden sjekkes (30\u2013600 sekunder)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "active_alert": {
+        "name": "Aktivt nødvarsel"
+      }
+    },
+    "sensor": {
+      "alert_count": {
+        "name": "Antall nødvarsler"
+      },
+      "last_alert": {
+        "name": "Siste nødvarsel"
+      },
+      "last_update": {
+        "name": "Sist oppdatert"
+      }
+    }
+  }
+}

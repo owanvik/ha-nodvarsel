@@ -1,0 +1,14 @@
+{
+  "domain": "nodvarsel",
+  "name": "Nødvarsel",
+  "codeowners": ["@owanvik"],
+  "config_flow": true,
+  "documentation": "https://github.com/owanvik/ha-nodvarsel",
+  "issue_tracker": "https://github.com/owanvik/ha-nodvarsel/issues",
+  "requirements": [],
+  "version": "1.0.0",
+  "homeassistant": "2025.12.0",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "single_config_entry": true
+}
