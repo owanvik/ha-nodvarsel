@@ -34,7 +34,6 @@ class NodvarselBinarySensor(CoordinatorEntity[NodvarselCoordinator], BinarySenso
     _attr_has_entity_name = True
     _attr_translation_key = "active_alert"
     _attr_device_class = BinarySensorDeviceClass.SAFETY
-    _attr_icon = "mdi:alert-octagram"
     _attr_attribution = ATTRIBUTION
 
     def __init__(
@@ -53,6 +52,13 @@ class NodvarselBinarySensor(CoordinatorEntity[NodvarselCoordinator], BinarySenso
             configuration_url="https://www.nodvarsel.no",
             entry_type=DeviceEntryType.SERVICE,
         )
+
+    @property
+    def icon(self) -> str:
+        """Returner ikon basert på tilstand."""
+        if self.is_on:
+            return "mdi:alert-octagram"
+        return "mdi:shield-check"
 
     @property
     def is_on(self) -> bool | None:
