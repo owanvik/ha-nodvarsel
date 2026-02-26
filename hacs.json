@@ -1,5 +1,6 @@
 {
   "name": "Nødvarsel",
   "homeassistant": "2025.12.0",
-  "render_readme": true
+  "render_readme": true,
+  "country": ["NO"]
 }
