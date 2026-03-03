@@ -18,3 +18,6 @@ MAX_SCAN_INTERVAL: Final = 600
 ATOM_NS: Final = "http://www.w3.org/2005/Atom"
 
 ATTRIBUTION: Final = "Data fra nodvarsel.no"
+
+EVENT_NEW_ALERT: Final = "nodvarsel_new_alert"
+MAX_BACKOFF_INTERVAL: Final = 3600  # maks 1 time mellom forsøk ved feil

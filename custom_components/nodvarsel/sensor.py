@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import Any
 
 from homeassistant.components.sensor import (
@@ -145,6 +145,4 @@ class NodvarselLastUpdateSensor(NodvarselSensorBase):
     @property
     def native_value(self) -> datetime | None:
         """Returner tidspunkt for siste vellykkede poll."""
-        if self.coordinator.last_update_success_time is not None:
-            return self.coordinator.last_update_success_time
-        return datetime.now(timezone.utc)
+        return self.coordinator.last_update_success_time
