@@ -145,4 +145,4 @@ class NodvarselLastUpdateSensor(NodvarselSensorBase):
     @property
     def native_value(self) -> datetime | None:
         """Returner tidspunkt for siste vellykkede poll."""
-        return self.coordinator.last_update_success_time
+        return getattr(self.coordinator, "last_update_success_time", None)

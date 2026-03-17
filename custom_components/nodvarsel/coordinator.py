@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import xml.etree.ElementTree as ET
-from datetime import timedelta
+from datetime import datetime, timedelta
 from typing import Any
 
 import aiohttp
 
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from homeassistant.util import dt as dt_util
 
 from .const import ATOM_NS, DOMAIN, EVENT_NEW_ALERT, LOGGER, MAX_BACKOFF_INTERVAL, RSS_URL
 
@@ -33,6 +34,7 @@ class NodvarselCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         self._known_guids: set[str] = set()
         self._initialized = False
         self.consecutive_errors = 0
+        self.last_update_success_time: datetime | None = None
 
     async def _async_update_data(self) -> dict[str, Any]:
         """Hent data fra RSS-feed med eksponentiell backoff ved feil."""
@@ -55,6 +57,7 @@ class NodvarselCoordinator(DataUpdateCoordinator[dict[str, Any]]):
 
         self.consecutive_errors = 0
         self.update_interval = self._base_scan_interval
+        self.last_update_success_time = dt_util.utcnow()
         self._fire_new_alert_events(data)
         return data
 

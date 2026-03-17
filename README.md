@@ -86,6 +86,11 @@ automation:
 
 Oppdateringsintervallet kan endres etter installasjon via **Innstillinger → Enheter og tjenester → Nødvarsel → Konfigurer**.
 
+## Kompatibilitet
+
+- Integrasjonen inkluderer en kompatibilitetsfiks for Home Assistant der `Sist oppdatert`-sensoren bruker en trygg fallback dersom coordinator-attributtet for siste vellykkede oppdatering ikke finnes.
+- Dette forhindrer `AttributeError` i enkelte HA-versjoner og sikrer stabil state-oppdatering av sensoren.
+
 ## Datakilde
 
 Denne integrasjonen henter data fra [nødvarsel.no](https://www.nodvarsel.no), en tjeneste levert av:
